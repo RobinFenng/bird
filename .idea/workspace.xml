@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="7" selection-start="708" selection-end="708" vertical-scroll-proportion="-8.964286" vertical-offset="129" max-vertical-offset="646">
+            <state line="27" column="0" selection-start="923" selection-end="923" vertical-scroll-proportion="0.78527606" vertical-offset="129" max-vertical-offset="646">
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="project.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="39" selection-start="233" selection-end="233" vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="475">
+            <state line="10" column="39" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="475">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="GameConfig.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="8" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+            <state line="10" column="8" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -62,16 +62,16 @@
       <file leaf-file-name=".cocos-project.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.cocos-project.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="171">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Game.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="41" selection-start="5293" selection-end="5293" vertical-scroll-proportion="0.7736944" vertical-offset="2811" max-vertical-offset="4218">
+            <state line="154" column="35" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.0" vertical-offset="2811" max-vertical-offset="4218">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="flappy_packer.plist" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/flappy_packer.plist">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="279" column="17" selection-start="9960" selection-end="9970" vertical-scroll-proportion="-3.12" vertical-offset="5145" max-vertical-offset="6460">
+            <state line="279" column="17" selection-start="9960" selection-end="9970" vertical-scroll-proportion="0.0" vertical-offset="5145" max-vertical-offset="6460">
               <folding />
             </state>
           </provider>
@@ -96,7 +96,7 @@
       <file leaf-file-name="resource.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resource.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="2" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+            <state line="6" column="2" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -219,14 +219,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -237,15 +229,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -268,13 +268,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24981132" sideWeight="0.6713781" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24981132" sideWeight="0.6713781" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -301,11 +301,21 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/sprites/CCSpriteFrameCache.js">
+    <entry file="file://$PROJECT_DIR$/res/flappy_packer.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="322" column="35" selection-start="13573" selection-end="13574" vertical-scroll-proportion="0.0" vertical-offset="5490" max-vertical-offset="6156">
+        <state line="6" column="2" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="323">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/sprites/CCSpriteFrameCache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="322" column="35" selection-start="13573" selection-end="13574" vertical-scroll-proportion="0.0" vertical-offset="5490" max-vertical-offset="6156" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/bg.png">
@@ -315,16 +325,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyLoading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="30" selection-start="9175" selection-end="9175" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="2451">
-          <folding />
-        </state>
+        <state line="38" column="30" selection-start="9175" selection-end="9175" vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="2451" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/flappy_frame.plist">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="513">
-          <folding />
-        </state>
+        <state line="15" column="20" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="513" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/flappy_packer.png">
@@ -334,23 +340,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/flappy_packer.plist">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="279" column="17" selection-start="9960" selection-end="9970" vertical-scroll-proportion="-3.12" vertical-offset="5145" max-vertical-offset="6460">
+        <state line="279" column="17" selection-start="9960" selection-end="9970" vertical-scroll-proportion="0.0" vertical-offset="5145" max-vertical-offset="6460">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="233" selection-end="233" vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="475">
+        <state line="10" column="39" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="475">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/base-nodes/CCNode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1643" column="4" selection-start="64484" selection-end="64484" vertical-scroll-proportion="0.33333334" vertical-offset="30593" max-vertical-offset="50863">
-          <folding />
-        </state>
+        <state line="1643" column="4" selection-start="64484" selection-end="64484" vertical-scroll-proportion="0.33333334" vertical-offset="30593" max-vertical-offset="50863" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resource.js">
@@ -363,13 +367,6 @@
     <entry file="file://$PROJECT_DIR$/.cocos-project.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="517">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="7" selection-start="708" selection-end="708" vertical-scroll-proportion="-8.964286" vertical-offset="129" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
@@ -390,7 +387,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="41" selection-start="5293" selection-end="5293" vertical-scroll-proportion="0.7736944" vertical-offset="2811" max-vertical-offset="4218">
+        <state line="154" column="35" selection-start="4812" selection-end="4812" vertical-scroll-proportion="0.0" vertical-offset="2811" max-vertical-offset="4218">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="923" selection-end="923" vertical-scroll-proportion="0.78527606" vertical-offset="129" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
