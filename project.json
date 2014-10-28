@@ -14,6 +14,7 @@
         "src/resource.js",
         "src/Game.js",
         "src/MyLoading.js",
-        "src/GameConfig.js"
+        "src/GameConfig.js",
+        "src/Pipe.js"
     ]
 }

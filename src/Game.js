@@ -10,6 +10,11 @@ var GameSceneLayer = cc.Layer.extend({
     clickBtn:null,
     space:null,
     groundArray:[],
+    pipeArray:[],
+    spaceHeight: 230,//管道中间空间大小
+    minHeight: 360,//底部管道最小高度
+    createDistance: 390,
+    nowDistance: 0,
     ctor:function () {
         this._super();
         this.space = new cp.Space();
@@ -22,10 +27,15 @@ var GameSceneLayer = cc.Layer.extend({
             y : 0
         });
         this.addChild(bg);
-       var firstground  =  new cc.Sprite(res.ground_png);
+
+       this.state = GameState.READY;
+
+    },
+    initGround:function(){
+        var firstground  =  new cc.Sprite(res.ground_png);
         firstground.setAnchorPoint(cc.p(0, 0));
-       this.groundArray.push(firstground);
-       this.addChild(firstground);
+        this.groundArray.push(firstground);
+        this.addChild(firstground);
 
         var secground  =  new cc.Sprite(res.ground_png);
         secground.setAnchorPoint(cc.p(0, 0));
@@ -33,9 +43,31 @@ var GameSceneLayer = cc.Layer.extend({
         this.groundArray.push(secground);
         this.addChild(secground);
 
+    },
+    initPipe:function(){
 
-       this.state = GameState.READY;
+        var hoseHeight = 274;
+        var acrossHeight = 200;
+        var downHeight = this.groundArray[0].height + BIRD.random(0,133);
+        var upHeight = this.winSize.height - downHeight - acrossHeight;
 
+        var pipe1  =   new cc.Sprite("#holdback1.png");
+        var pipe2  =   new cc.Sprite("#holdback2.png");
+
+        pipe1.setAnchorPoint(cc.p(0, 0));
+        pipe2.setAnchorPoint(cc.p(0, 0));
+
+        pipe1.setPosition(cc.p(this.winSize.width + 10, this.groundArray[0].height));
+        pipe2.setPosition(cc.p(this.winSize.width + 10, downHeight+acrossHeight));
+
+
+        pipe1.setScaleY(downHeight / hoseHeight);
+        pipe2.setScaleY(upHeight / hoseHeight);
+
+        this.pipeArray.push(pipe1);
+        this.addChild(pipe1);
+        this.pipeArray.push(pipe2);
+        this.addChild(pipe2);
     },
     makeGround: function (dt) {
         if (this.groundArray.length <= 0)return;
@@ -63,29 +95,45 @@ var GameSceneLayer = cc.Layer.extend({
                 this.groundArray.splice(i, 1);
             }
         }
+
+        return true;
     },
-//    createGround:function(dt){
-//      var ground = new cc.Sprite(res.ground_png);
-//      ground.setAnchorPoint(cc.p(0, 0));
-//        ground.attr({
-//            x:this.groundArray.length*300-250*dt,
-//            y:0
-//        });
-//      ground.zOrder =10;
-//      this.addChild(ground);
-//      this.grourdArr.push(ground);
-//       console.log(this.grourdArr.length);
-//
-//    },
+    makePipe: function (dt) {
+        this.nowDistance = this.nowDistance +BIRD.SPEED * dt;
+        if (this.nowDistance > this.createDistance) {
+            this.nowDistance = 0;
+            this.initPipe();
+        }
+        for (var i = 0; i < this.pipeArray.length; i++) {
+            var pipeline = this.pipeArray[i];
+            var position = pipeline.getPosition();
+            pipeline.setPosition(cc.p(position.x - BIRD.SPEED * dt, position.y));
+           // var birdPos = this.gameLayer.bird.getPosition();
+           /* if (!pipeline.isScore() && birdPos.x >= position.x && birdPos.x <= position.x + cSize.width) {
+                this.gameLayer.addScore();
+                pipeline.setScored();
+            }*/
+            if (position.x + position.width < 0) {
+                pipeline.setVisible(false);
+            }
+        }
+        for (var i = 0; i < this.pipeArray.length; i++) {
+            var pipeline = this.pipeArray[i];
+            if (!pipeline.isVisible()) {
+                this.pipeArray.splice(i, 1);
+            }
+        }
+    },
     onEnter:function(){
         this._super();
         cc.spriteFrameCache.addSpriteFrames(res.flappy_packer_plist);
         cc.textureCache.addImage(res.flappy_packer_png);
         cc.animationCache.addAnimations(res.flappy_frame_plist);
 
-
         //初始鸟
         this.initBird();
+        this.initGround();
+        this.initPipe();
         //初始物理环境
         this.initPhysics();
 
@@ -158,6 +206,7 @@ var GameSceneLayer = cc.Layer.extend({
     update:function(dt){
         this.space.step(1/60.0);
         this.makeGround(dt);
+        this.makePipe(dt);
     },
     doForceBird : function(){
         var speed  = BIRD.SPEED;
@@ -180,27 +229,6 @@ var GameSceneLayer = cc.Layer.extend({
         var actionFrame = new cc.Animate(cc.animationCache.getAnimation("fly"));
         var flyAction = new cc.Repeat(actionFrame, 90000);
         this.bird.runAction(new cc.Sequence( flyAction));
-    },
-    newHose :function(num){
-
-        var hoseHeight = 274;
-        var acrossHeight = 100;
-
-        var downHeight = 100 + Math.random();
-        var upHeight = 1100 - downHeight - acrossHeight;
-
-        var hoseX = 400 * num;
-
-        var ccSpriteDown = new cc.Sprite("#holdback1.png");
-        ccSpriteDown.zOrder = 1;
-        ccSpriteDown.attr({
-            x:hoseX,
-            y:203,
-            scaleY:downHeight / hoseHeight
-        });
-        console.log(num+":"+hoseX);
-        this.addChild(ccSpriteDown);
-        //this.hoseSpriteList.push(ccSpriteDown);
     }
 
 

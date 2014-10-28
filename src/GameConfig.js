@@ -10,3 +10,6 @@ if(typeof GameState == "undefined") {
 };
 var BIRD = {};
 BIRD.SPEED = 300;
+BIRD.random = function (x, y) {
+    return parseInt(Math.random() * (y - x) + x);
+}
