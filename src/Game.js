@@ -57,9 +57,10 @@ var GameSceneLayer = cc.Layer.extend({
         pipe1.setAnchorPoint(cc.p(0, 0));
         pipe2.setAnchorPoint(cc.p(0, 0));
 
-        pipe1.setPosition(cc.p(this.winSize.width + 10, this.groundArray[0].height));
-        pipe2.setPosition(cc.p(this.winSize.width + 10, downHeight+acrossHeight));
-
+        var pos1 =  cc.p(this.winSize.width + 10, this.groundArray[0].height);
+        var pos2 =  cc.p(this.winSize.width + 10, downHeight+acrossHeight);
+        pipe1.setPosition(pos1);
+        pipe2.setPosition(pos2);
 
         pipe1.setScaleY(downHeight / hoseHeight);
         pipe2.setScaleY(upHeight / hoseHeight);
@@ -108,11 +109,6 @@ var GameSceneLayer = cc.Layer.extend({
             var pipeline = this.pipeArray[i];
             var position = pipeline.getPosition();
             pipeline.setPosition(cc.p(position.x - BIRD.SPEED * dt, position.y));
-           // var birdPos = this.gameLayer.bird.getPosition();
-           /* if (!pipeline.isScore() && birdPos.x >= position.x && birdPos.x <= position.x + cSize.width) {
-                this.gameLayer.addScore();
-                pipeline.setScored();
-            }*/
             if (position.x + position.width < 0) {
                 pipeline.setVisible(false);
             }
@@ -137,7 +133,7 @@ var GameSceneLayer = cc.Layer.extend({
         //初始物理环境
         this.initPhysics();
 
-
+        BIRD.TOUCH_FLAG = true;
 
         this.clickBtn =  new cc.Sprite("#click.png");
         this.clickBtn.x = this.winSize.width/2;
@@ -157,6 +153,7 @@ var GameSceneLayer = cc.Layer.extend({
 
         },this);
 
+
     },
     initBird:function(){
 
@@ -170,7 +167,7 @@ var GameSceneLayer = cc.Layer.extend({
         shape.setElasticity(0.5);
         shape.setFriction(0.3);
         shape.setCollisionType(1);
-        shape.setLayers(3);
+        shape.setLayers(1);
         this.space.addShape(shape);
 
         this.bird =  new cc.PhysicsSprite("#bird1.png");
@@ -187,16 +184,19 @@ var GameSceneLayer = cc.Layer.extend({
         var space = this.space;
         space.gravity = cp.v(0, -980);
         var staticBody = space.staticBody;
-        var walls = [ new cp.SegmentShape( staticBody, cp.v(0,73), cp.v(this.winSize.height,73), 0 )	// bottom
+        var walls = [
+            new cp.SegmentShape( staticBody, cp.v(0,this.winSize.height), cp.v(this.winSize.width,this.winSize.height), 0 ),//top
+            new cp.SegmentShape( staticBody, cp.v(0,73), cp.v(this.winSize.height,73), 0 )	// bottom
         ];
-        for( var i=0; i < walls.length; i++ ) {
 
+        for( var i=0; i < walls.length; i++ ) {
             var shape = walls[i];
             shape.setElasticity(1);         //弹性
             shape.setFriction(0);           //摩擦
             space.addShape( shape );
             shape.setLayers(1);
         }
+
     },
     startGame:function(){
         this.clickBtn.setVisible(false);
@@ -207,6 +207,38 @@ var GameSceneLayer = cc.Layer.extend({
         this.space.step(1/60.0);
         this.makeGround(dt);
         this.makePipe(dt);
+        this.checkCrash(dt);
+    },
+    gameOver:function(){
+        BIRD.TOUCH_FLAG = false;
+        this.bird.stopAllActions();
+        var birdX = this.bird.getPositionX();
+        var birdY = this.bird.getPositionY();
+        var time = birdY / 200;
+        this.bird.runAction(new cc.Sequence(
+            new cc.DelayTime(0.1),
+            new cc.Spawn(new cc.RotateTo(time, 90), new cc.MoveTo(time, cc.p(birdX, 85))))
+        );
+        this.unscheduleUpdate();
+
+
+    },
+    checkCrash:function(dt){
+
+        if(this.bird.y<73){
+            this.gameOver();
+            return;
+        }
+        var birdRect = this.bird.getBoundingBox();
+        for(var i=0;i<this.pipeArray.length;i++){
+            var hose = this.pipeArray[i];
+            if (cc.rectIntersectsRect(hose.getBoundingBox(), birdRect)) {
+                this.gameOver();
+                return;
+            }
+        }
+
+
     },
     doForceBird : function(){
         var speed  = BIRD.SPEED;
@@ -219,6 +251,7 @@ var GameSceneLayer = cc.Layer.extend({
         if(this.state ==GameState.READY){
             this.startGame();
         }else if(this.state == GameState.ING){
+           if(!BIRD.TOUCH_FLAG) return;
             this.doForceBird();
         }
     },
