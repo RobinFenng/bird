@@ -15,6 +15,8 @@ var GameSceneLayer = cc.Layer.extend({
     minHeight: 360,//底部管道最小高度
     createDistance: 390,
     nowDistance: 0,
+    score:0,
+
     ctor:function () {
         this._super();
         this.space = new cp.Space();
@@ -54,6 +56,8 @@ var GameSceneLayer = cc.Layer.extend({
         var pipe1  =   new cc.Sprite("#holdback1.png");
         var pipe2  =   new cc.Sprite("#holdback2.png");
 
+        pipe1.scored = false;
+        pipe2.scored = false;
         pipe1.setAnchorPoint(cc.p(0, 0));
         pipe2.setAnchorPoint(cc.p(0, 0));
 
@@ -64,6 +68,9 @@ var GameSceneLayer = cc.Layer.extend({
 
         pipe1.setScaleY(downHeight / hoseHeight);
         pipe2.setScaleY(upHeight / hoseHeight);
+
+        pipe1.setTag(1);
+        pipe2.setTag(2);
 
         this.pipeArray.push(pipe1);
         this.addChild(pipe1);
@@ -143,7 +150,7 @@ var GameSceneLayer = cc.Layer.extend({
 
         this.init();
 
-        this.scheduleUpdate();
+
         cc.eventManager.addListener({
             event:cc.EventListener.TOUCH_ALL_AT_ONCE,
             onTouchesBegan:function(touches,event){
@@ -211,6 +218,8 @@ var GameSceneLayer = cc.Layer.extend({
     },
     gameOver:function(){
         BIRD.TOUCH_FLAG = false;
+        this.state = GameState.LOSE;
+
         this.bird.stopAllActions();
         var birdX = this.bird.getPositionX();
         var birdY = this.bird.getPositionY();
@@ -221,6 +230,13 @@ var GameSceneLayer = cc.Layer.extend({
         );
         this.unscheduleUpdate();
 
+        this.scheduleOnce(function () {
+            //MW.CUR_GAME_STATUS = MW.GAME_STATUS.GAME_OVER;
+            var scene = new cc.Scene();
+            var layer = new GameOverLayer(this.score);
+            scene.addChild(layer);
+            cc.director.runScene(new cc.TransitionFade(1.2, scene));
+        }, 1);
 
     },
     checkCrash:function(dt){
@@ -236,6 +252,11 @@ var GameSceneLayer = cc.Layer.extend({
                 this.gameOver();
                 return;
             }
+            if (!hose.scored &&hose.getTag()==1&& this.bird.x >= hose.x && this.bird.x <= hose.x + hose.width) {
+                hose.scored = true;
+                this.score+=1;
+            }
+
         }
 
 
@@ -248,7 +269,9 @@ var GameSceneLayer = cc.Layer.extend({
         this.bird.getBody().applyImpulse(cp.v(0,y),cp.v(0,0));
     },
     preventTouch:function(){
+        console.log(this.state);
         if(this.state ==GameState.READY){
+            this.scheduleUpdate();
             this.startGame();
         }else if(this.state == GameState.ING){
            if(!BIRD.TOUCH_FLAG) return;
@@ -261,7 +284,7 @@ var GameSceneLayer = cc.Layer.extend({
         var time = birdY / 2000;
         var actionFrame = new cc.Animate(cc.animationCache.getAnimation("fly"));
         var flyAction = new cc.Repeat(actionFrame, 90000);
-        this.bird.runAction(new cc.Sequence( flyAction));
+        this.bird.runAction(new cc.Sequence(flyAction));
     }
 
 

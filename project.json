@@ -15,6 +15,7 @@
         "src/Game.js",
         "src/MyLoading.js",
         "src/GameConfig.js",
-        "src/Pipe.js"
+        "src/GameOver.js",
+        "src/ShareScene.js"
     ]
 }
