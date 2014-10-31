@@ -44,6 +44,18 @@ var GameOverLayer = cc.Layer.extend({
             base.zOrder =1;
             this.addChild(base);
 
+            var score = new cc.Sprite("#number.png");
+            var _scoreRect = score.getTextureRect();
+
+            var singleWidth = _scoreRect.width/10;
+            score.setTextureRect(cc.rect(_scoreRect.x+7*singleWidth,_scoreRect.y,_scoreRect.width/10,_scoreRect.height));
+            score.scale = 0.5;
+
+            score.x = this.winSize.width / 2;
+            score.y = this.winSize.height /2;
+            score.zOrder =1;
+            this.addChild(score);
+
             var ok = new cc.Sprite("#ok.png");
             ok.x = this.winSize.width /4*1;
             ok.y = this.winSize.height /4*1;
