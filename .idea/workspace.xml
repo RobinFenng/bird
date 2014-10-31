@@ -26,7 +26,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1224" selection-end="1224" vertical-scroll-proportion="-8.642858" vertical-offset="442" max-vertical-offset="1577">
+            <state line="40" column="9" selection-start="1393" selection-end="1393" vertical-scroll-proportion="-11.357142" vertical-offset="442" max-vertical-offset="1577">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="project.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="28" selection-start="358" selection-end="358" vertical-scroll-proportion="-10.857142" vertical-offset="0" max-vertical-offset="513">
+            <state line="16" column="28" selection-start="358" selection-end="358" vertical-scroll-proportion="-10.0" vertical-offset="24" max-vertical-offset="513">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Game.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="0" selection-start="6899" selection-end="6899" vertical-scroll-proportion="0.18568665" vertical-offset="4103" max-vertical-offset="5814">
+            <state line="221" column="0" selection-start="6899" selection-end="6899" vertical-scroll-proportion="0.0" vertical-offset="4103" max-vertical-offset="5814">
               <folding />
             </state>
           </provider>
@@ -68,13 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameOver.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GameOver.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameOver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="9" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1919">
-              <folding>
-                <element signature="e#0#40#0" expanded="false" />
-              </folding>
+            <state line="79" column="49" selection-start="2178" selection-end="2178" vertical-scroll-proportion="1.139265" vertical-offset="912" max-vertical-offset="2432">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,7 +80,7 @@
       <file leaf-file-name="resource.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resource.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+            <state line="7" column="0" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -91,7 +89,7 @@
       <file leaf-file-name="ShareScene.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ShareScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="17" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
+            <state line="31" column="17" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="836">
               <folding />
             </state>
           </provider>
@@ -125,8 +123,8 @@
         <option value="$PROJECT_DIR$/src/ShareScene.js" />
         <option value="$PROJECT_DIR$/project.json" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/GameOver.js" />
         <option value="$PROJECT_DIR$/src/Game.js" />
+        <option value="$PROJECT_DIR$/src/GameOver.js" />
       </list>
     </option>
   </component>
@@ -162,6 +160,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,9 +193,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bird" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,14 +224,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -230,15 +234,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -260,7 +272,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
+    <frame x="1" y="1" width="1364" height="726" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -308,9 +320,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/external/chipmunk/chipmunk.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1111" column="22" selection-start="34967" selection-end="34967" vertical-scroll-proportion="0.3326886" vertical-offset="20937" max-vertical-offset="113468">
-          <folding />
-        </state>
+        <state line="1111" column="22" selection-start="34967" selection-end="34967" vertical-scroll-proportion="0.3326886" vertical-offset="20937" max-vertical-offset="113468" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/base-nodes/CCNode.js">
@@ -322,21 +332,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/flappy_packer.plist">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="29" selection-start="3940" selection-end="3952" vertical-scroll-proportion="0.0" vertical-offset="1896" max-vertical-offset="6460">
-          <folding />
-        </state>
+        <state line="110" column="29" selection-start="3940" selection-end="3952" vertical-scroll-proportion="0.0" vertical-offset="1896" max-vertical-offset="6460" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WeixinApi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4351">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="28" selection-start="358" selection-end="358" vertical-scroll-proportion="-10.857142" vertical-offset="0" max-vertical-offset="513">
           <folding />
         </state>
       </provider>
@@ -367,13 +368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1224" selection-end="1224" vertical-scroll-proportion="-8.642858" vertical-offset="442" max-vertical-offset="1577">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="22" selection-start="150" selection-end="150" vertical-scroll-proportion="0.14700194" vertical-offset="0" max-vertical-offset="517">
@@ -388,18 +382,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameOver.js">
+    <entry file="file://$PROJECT_DIR$/src/Game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="9" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1919">
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
+        <state line="221" column="0" selection-start="6899" selection-end="6899" vertical-scroll-proportion="0.0" vertical-offset="4103" max-vertical-offset="5814">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.js">
+    <entry file="file://$PROJECT_DIR$/project.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="0" selection-start="6899" selection-end="6899" vertical-scroll-proportion="0.18568665" vertical-offset="4103" max-vertical-offset="5814">
+        <state line="16" column="28" selection-start="358" selection-end="358" vertical-scroll-proportion="-10.0" vertical-offset="24" max-vertical-offset="513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="9" selection-start="1393" selection-end="1393" vertical-scroll-proportion="-11.357142" vertical-offset="442" max-vertical-offset="1577">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameOver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="49" selection-start="2178" selection-end="2178" vertical-scroll-proportion="1.139265" vertical-offset="912" max-vertical-offset="2432">
           <folding />
         </state>
       </provider>

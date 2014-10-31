@@ -5,6 +5,8 @@ var GameOverLayer = cc.Layer.extend({
 
     score:0,
     winSize:null,
+    yellow:null,
+    gray:null,
     ctor:function(score){
         this._super();
         this.score = score;
@@ -39,12 +41,25 @@ var GameOverLayer = cc.Layer.extend({
             var base = new cc.Sprite("#base.png");
             base.x = this.winSize.width / 2;
             base.y = this.winSize.height /2;
+            base.zOrder =1;
             this.addChild(base);
 
             var ok = new cc.Sprite("#ok.png");
             ok.x = this.winSize.width /4*1;
             ok.y = this.winSize.height /4*1;
             this.addChild(ok);
+
+             this.gray = new cc.Sprite("#gray.png");
+            this.gray.x = this.winSize.width /3;
+            this.gray.y = this.winSize.height /2 - 5 ;
+           // gray.zOrder =2;
+            this.addChild(this.gray);
+
+            this.yellow = new cc.Sprite("#yellow.png");
+            this.yellow.x = this.winSize.width /3;
+            this.yellow.y = this.winSize.height/2 - 5;
+            this.addChild(this.yellow);
+
 
             var share = new cc.Sprite("#share.png");
             share.x = this.winSize.width /4*3;
@@ -57,10 +72,20 @@ var GameOverLayer = cc.Layer.extend({
     onEnter:function(){
 
         var step =this.score, percent;
-        if (step > 20) percent = 99;
-        else if (step > 10) percent = Math.round(95 - 4 * (10-step)/6);
-        else if (step > 1) percent = Math.round(85 - 10 * (20-step)/10);
-        else percent = 0;
+        if (step > 40){
+            percent = 99;
+            this.gray.setVisible(false);
+        }
+        else if (step > 20){
+            percent = Math.round(95 - 4 * (10-step)/6);
+            this.yellow.setVisible(false);
+        } else if (step > 1) {
+            percent = Math.round(85 - 10 * (20-step)/10);
+            this.yellow.setVisible(false);
+        }else{
+            percent = 0;
+            this.yellow.setVisible(false);
+        }
 
 
         cc.eventManager.addListener({
