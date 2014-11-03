@@ -269,7 +269,6 @@ var GameSceneLayer = cc.Layer.extend({
         this.bird.getBody().applyImpulse(cp.v(0,y),cp.v(0,0));
     },
     preventTouch:function(){
-        console.log(this.state);
         if(this.state ==GameState.READY){
             this.scheduleUpdate();
             this.startGame();

@@ -15,7 +15,6 @@ var ShareLayer = cc.Layer.extend({
             arrow.x = cc.winSize.width - 15;
             arrow.y = cc.winSize.height - 5;
             this.addChild(arrow);
-
             var label = new cc.LabelTTF("请点击右上角的菜单按钮\n再点\"分享到朋友圈\"\n让好友们挑战你的分数！", "宋体", 20, cc.size(cc.winSize.width*0.7, 250), cc.TEXT_ALIGNMENT_CENTER);
             label.x = cc.winSize.width/2;
             label.y = cc.winSize.height - 100;

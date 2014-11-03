@@ -7,6 +7,7 @@ var GameOverLayer = cc.Layer.extend({
     winSize:null,
     yellow:null,
     gray:null,
+    new:false,
     ctor:function(score){
         this._super();
         this.score = score;
@@ -44,27 +45,72 @@ var GameOverLayer = cc.Layer.extend({
             base.zOrder =1;
             this.addChild(base);
 
-            var score = new cc.Sprite("#number.png");
-            var _scoreRect = score.getTextureRect();
+            var highScore = cc.sys.localStorage.getItem("score");
+            if(!highScore||this.score>highScore){
+                cc.sys.localStorage.setItem("score",this.score);
+                highScore = this.score;
+                this.new = true;
+            }
 
-            var singleWidth = _scoreRect.width/10;
-            score.setTextureRect(cc.rect(_scoreRect.x+7*singleWidth,_scoreRect.y,_scoreRect.width/10,_scoreRect.height));
-            score.scale = 0.5;
+            var s =  highScore.toString().split("");
+            for(var j=0;j<s.length;j++){
 
-            score.x = this.winSize.width / 2;
-            score.y = this.winSize.height /2;
-            score.zOrder =1;
-            this.addChild(score);
+                var score = new cc.Sprite("#number.png");
+                var _scoreRect = score.getTextureRect();
+                var singleWidth = _scoreRect.width/10;
+                var i = parseInt(s[j]);
+                if(i==1){
+                    score.setTextureRect(cc.rect(_scoreRect.x+i*singleWidth-1,_scoreRect.y,_scoreRect.width/10-4,_scoreRect.height));
+                }else if(i<=5&&i!=0){
+                    score.setTextureRect(cc.rect(_scoreRect.x+i*singleWidth-5,_scoreRect.y,_scoreRect.width/10,_scoreRect.height));
+                }else{
+                    score.setTextureRect(cc.rect(_scoreRect.x+i*singleWidth,_scoreRect.y,_scoreRect.width/10,_scoreRect.height));
+                }
+                score.scale = 0.4;
+                score.x = this.winSize.width / 4*3-27+i*3;
+                score.y = this.winSize.height /2-20;
+                score.zOrder =1;
+                this.addChild(score);
+            }
+
+
+            var s =  this.score.toString().split("");
+            for(var j=0;j<s.length;j++){
+
+                var score = new cc.Sprite("#number.png");
+                var _scoreRect = score.getTextureRect();
+                var singleWidth = _scoreRect.width/10;
+                var i = parseInt(s[j]);
+                if(i==1){
+                    score.setTextureRect(cc.rect(_scoreRect.x+i*singleWidth-1,_scoreRect.y,_scoreRect.width/10-4,_scoreRect.height));
+                }else if(i<=5&&i!=0){
+                    score.setTextureRect(cc.rect(_scoreRect.x+i*singleWidth-5,_scoreRect.y,_scoreRect.width/10,_scoreRect.height));
+                }else{
+                    score.setTextureRect(cc.rect(_scoreRect.x+i*singleWidth,_scoreRect.y,_scoreRect.width/10,_scoreRect.height));
+                }
+                score.scale = 0.4;
+                score.x = this.winSize.width / 4*3-27+i*3;
+                score.y = this.winSize.height /2+14;
+                score.zOrder =1;
+                this.addChild(score);
+            }
 
             var ok = new cc.Sprite("#ok.png");
             ok.x = this.winSize.width /4*1;
             ok.y = this.winSize.height /4*1;
             this.addChild(ok);
 
-             this.gray = new cc.Sprite("#gray.png");
+
+            if(this.new){
+                var newScore = new cc.Sprite("#new.png");
+                newScore.x = this.winSize.width / 4*3-20;
+                newScore.y = this.winSize.height /2-35;
+                this.addChild(newScore);
+            }
+
+            this.gray = new cc.Sprite("#gray.png");
             this.gray.x = this.winSize.width /3;
             this.gray.y = this.winSize.height /2 - 5 ;
-           // gray.zOrder =2;
             this.addChild(this.gray);
 
             this.yellow = new cc.Sprite("#yellow.png");
